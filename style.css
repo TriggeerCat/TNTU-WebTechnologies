@@ -2,25 +2,35 @@
     font-family: sans-serif;
     margin: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
     width: 1000px;
-    margin: 0 auto;
+    margin: 20px auto;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .site-header {
     background-color: #eee;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
     align-items: center;
     border-bottom: 1px solid #ccc;
+    flex-shrink: 0;
 }
 
 .header-left {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     display: flex;
     align-items: center;
 }
@@ -30,7 +40,7 @@
     height: 80px;
     border-radius: 50%;
     margin-right: 15px;
-    border: 2px solid #ddd;
+    object-fit: cover;
 }
 
 .personal-info p {
@@ -38,25 +48,37 @@
     font-size: 0.9em;
 }
 
-.header-middle .logo {
-    height: 60px;
+.header-middle {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: center;
 }
 
 .header-right {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    justify-self: end;
+}
+
+.logo-container {
     display: flex;
     gap: 10px;
 }
 
-.header-right .logo {
+.logo {
+    height: 50px;
+}
+
+.tntu-logo {
     height: 40px;
 }
 
-.tntu-logo {}
-
 .main-menu {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
     background-color: #333;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 0;
 }
 
 .main-menu ul {
@@ -64,196 +86,31 @@
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
-.main-menu a {
+.main-menu li a {
     color: #fff;
     text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
 }
 
-.main-menu a:hover {
-    text-decoration: underline;
+.main-menu li a:hover {
+    background-color: #555;
 }
 
-.main-menu .current-page {
+.current-page {
     font-weight: bold;
 }
 
 .content-wrapper {
     padding: 20px;
+    flex-grow: 1;
 }
 
-.main-content {}
-
-.main-page-structure > div {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-}
-
-.hobbies-short, .interests, .advertisement-block {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.hobby-item, .interest-item, .ad-item {
-    flex: 1 1 30%;
-    padding: 10px;
-    border: 1px solid #eee;
-    background-color: #fff;
-    box-sizing: border-box;
-}
-
-.ad-item {
-    text-align: center;
-}
-
-.biography-short h2, .group-info-short h2, .hobbies-short h2, .interests h2, .advertisement-block h2, .interesting-short h2 {
-    margin-top: 0;
-}
-
-.biography-page {
-    padding: 15px;
-}
-
-.biography-container {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.enlarged-photo {
-    flex: 0 0 auto;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: #fff;
-}
-
-.enlarged-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-.biography-text {
-    flex: 1 1 auto;
-    font-size: 0.95em;
-    line-height: 1.6;
-}
-
-.biography-text p {
-    margin-bottom: 1em;
-}
-
-.biography-text span {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 5px;
-}
-
-.biography-text span img {
-    width: 50px;
-    height: auto;
-    vertical-align: middle;
-}
-
-.hobbies-page {
-    padding: 15px;
-}
-
-.hobbies-container {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.hobbies-columns {
-    flex: 1;
-    display: flex;
-    gap: 20px;
-}
-
-.hobby-column {
-    flex: 1;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    box-sizing: border-box;
-}
-
-.hobby-column h2 {
-    margin-top: 0;
-}
-
-.hobby-photo {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.hobby-advertisement {
-    flex: 0 0 200px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    box-sizing: border-box;
-}
-
-.hobby-advertisement h2 {
-    margin-top: 0;
-    text-align: center;
-}
-
-.hobby-advertisement .ad-item {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #eee;
-    background-color: #fff;
-    text-align: center;
-}
-
-.hobby-advertisement .ad-item:last-child {
-    margin-bottom: 0;
-}
-
-.interesting-page {
-    padding: 15px;
-}
-
-.interesting-item {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 15px;
-    background-color: #f9f9f9;
-}
-
-.interesting-image {
-    flex: 0 0 200px;
-}
-
-.interesting-image img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-.interesting-article {
-    flex: 1;
-}
-
-.interesting-article h2 {
-    margin-top: 0;
-}
-
-.interesting-item:last-child {
-    margin-bottom: 0;
+.main-content {
 }
 
 .site-footer {
@@ -261,7 +118,385 @@
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: sticky;
-    bottom: 0;
+    flex-shrink: 0;
+}
+
+.biography-container {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+
+.biography-image {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.biography-image img {
+    width: 10vw;
+    display: block;
+    object-fit: cover;
+}
+
+.biography-text {
+    flex-grow: 1;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.biography-text p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.inline-photo {
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.inline-photo img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.group-info-block {
+    padding: 15px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.group-info-block p {
+    line-height: 1.6;
+}
+
+.inline-group-photo {
+    float: left;
+    margin: 0 15px 10px 0;
+    max-width: 150px;
+    height: auto;
+}
+
+.hobbies-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hobby-item {
+    padding: 15px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hobby-photo {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.hobby-item h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.hobby-item p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+    font-size: 0.95em;
+}
+
+.hobby-item a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.hobby-ad {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.hobby-ad h2 {
+    margin-top: 0;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.advertisement-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ad-item {
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    text-align: left;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+    grid-template-rows: auto auto auto auto;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.grid-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.grid-item h2 {
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+.grid-item p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.grid-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.grid-item a:hover {
+    text-decoration: underline;
+}
+
+.biography-short {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.group-info-short {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.hobbies-short-1 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.hobbies-short-2 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.hobbies-short-3 {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.interesting-short-1 {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}
+
+.interesting-short-2 {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+.interesting-short-3 {
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+}
+
+.advertisement-block.grid-item {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.interesting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.interesting-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 15px;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.interesting-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.interesting-image img {
     width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.interesting-article h2 {
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+.interesting-article p {
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .site-header {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        text-align: center;
+    }
+
+    .header-left {
+        grid-column: 1 / 1;
+        grid-row: 1 / 2;
+        justify-self: center;
+        margin-bottom: 10px;
+    }
+
+    .header-middle {
+        grid-column: 1 / 1;
+        grid-row: 2 / 3;
+        margin-bottom: 10px;
+    }
+
+    .header-right {
+        grid-column: 1 / 1;
+        grid-row: 3 / 4;
+        justify-self: center;
+    }
+
+    .logo-container {
+        gap: 5px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .tntu-logo {
+        height: 35px;
+    }
+
+    .main-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .biography-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .biography-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .biography-text {
+        padding-left: 0;
+    }
+
+    .hobbies-container {
+        flex-direction: column;
+    }
+
+    .hobby-item {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hobby-item a {
+        margin-top: 10px;
+    }
+
+    .hobby-ad {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .advertisement-block {
+        flex-direction: column;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .interesting-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interesting-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .interesting-image {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .personal-photo {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    .header-middle .logo {
+        height: 30px;
+    }
+
+    .personal-info p {
+        font-size: 0.8em;
+    }
 }
