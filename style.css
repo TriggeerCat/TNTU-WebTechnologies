@@ -1,0 +1,267 @@
+﻿body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.site-header {
+    background-color: #eee;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.personal-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #ddd;
+}
+
+.personal-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.header-middle .logo {
+    height: 60px;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+.header-right .logo {
+    height: 40px;
+}
+
+.tntu-logo {}
+
+.main-menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.main-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-menu a:hover {
+    text-decoration: underline;
+}
+
+.main-menu .current-page {
+    font-weight: bold;
+}
+
+.content-wrapper {
+    padding: 20px;
+}
+
+.main-content {}
+
+.main-page-structure > div {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.hobbies-short, .interests, .advertisement-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hobby-item, .interest-item, .ad-item {
+    flex: 1 1 30%;
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.ad-item {
+    text-align: center;
+}
+
+.biography-short h2, .group-info-short h2, .hobbies-short h2, .interests h2, .advertisement-block h2, .interesting-short h2 {
+    margin-top: 0;
+}
+
+.biography-page {
+    padding: 15px;
+}
+
+.biography-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.enlarged-photo {
+    flex: 0 0 auto;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.enlarged-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.biography-text {
+    flex: 1 1 auto;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.biography-text p {
+    margin-bottom: 1em;
+}
+
+.biography-text span {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+}
+
+.biography-text span img {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.hobbies-page {
+    padding: 15px;
+}
+
+.hobbies-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.hobbies-columns {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.hobby-column {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.hobby-column h2 {
+    margin-top: 0;
+}
+
+.hobby-photo {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.hobby-advertisement {
+    flex: 0 0 200px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.hobby-advertisement h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.hobby-advertisement .ad-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    text-align: center;
+}
+
+.hobby-advertisement .ad-item:last-child {
+    margin-bottom: 0;
+}
+
+.interesting-page {
+    padding: 15px;
+}
+
+.interesting-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.interesting-image {
+    flex: 0 0 200px;
+}
+
+.interesting-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.interesting-article {
+    flex: 1;
+}
+
+.interesting-article h2 {
+    margin-top: 0;
+}
+
+.interesting-item:last-child {
+    margin-bottom: 0;
+}
+
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
